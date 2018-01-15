@@ -41,7 +41,7 @@ describe('multisignature', function () {
 		var signer2 = randomUtil.account();
 		var dapp = randomUtil.application();
 
-		localCommon.beforeBlock(multisigAccount, dapp, function (lib, sender) {
+		localCommon.beforeBlock('multisig', multisigAccount, dapp, function (lib, sender) {
 			library = lib;
 			multisigSender = sender;
 		});
@@ -167,7 +167,7 @@ describe('multisignature', function () {
 		var signer2 = randomUtil.account();
 		var dapp = randomUtil.application();
 
-		localCommon.beforeBlock(multisigAccount, dapp, function (lib, sender) {
+		localCommon.beforeBlock('multisig', multisigAccount, dapp, function (lib, sender) {
 			library = lib;
 			multisigSender = sender;
 		});

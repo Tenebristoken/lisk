@@ -39,13 +39,13 @@ describe('send transactions on top of unconfirmed type 4', function () {
 
 	scenarios.regular.dapp = randomUtil.application();
 
-	localCommon.beforeBlock(scenarios.regular.account, scenarios.regular.dapp, function (lib, sender) {
+	localCommon.beforeBlock('multisig', scenarios.regular.account, scenarios.regular.dapp, function (lib, sender) {
 		library = lib;
 	});
 
 	before('add multisig transaction to pool', function (done) {
 		localCommon.addTransaction(library, scenarios.regular.multiSigTransaction, function (err, res) {
-			expect(res).not.null;
+			expect(res).to.equal(scenarios.regular.multiSigTransaction.id);
 			done();
 		});
 	});
