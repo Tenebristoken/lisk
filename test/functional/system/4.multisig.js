@@ -20,14 +20,18 @@ var lisk = require('lisk-js');
 var test = require('../../test');
 var _  = test._;
 
+var accountFixtures = require('../../fixtures/accounts');
+
 var randomUtil = require('../../common/utils/random');
+var Scenarios = require('../common/scenarios');
 
 var localCommon = require('./common');
 
+var transactionTypes = require('../../../helpers/transactionTypes.js');
+
 describe('multisignature', function () {
 
-	var library;
-	var multisigSender;
+	var library, multisigSender, transaction;
 
 	describe('applyUnconfirm transaction', function () {
 		
@@ -35,8 +39,9 @@ describe('multisignature', function () {
 		var multisigTransaction;
 		var signer1 = randomUtil.account();
 		var signer2 = randomUtil.account();
+		var dapp = randomUtil.application();
 
-		localCommon.beforeBlock(multisigAccount, function (lib, sender) {
+		localCommon.beforeBlock(multisigAccount, dapp, function (lib, sender) {
 			library = lib;
 			multisigSender = sender;
 		});
@@ -160,8 +165,9 @@ describe('multisignature', function () {
 		var multisigTransaction;
 		var signer1 = randomUtil.account();
 		var signer2 = randomUtil.account();
+		var dapp = randomUtil.application();
 
-		localCommon.beforeBlock(multisigAccount, function (lib, sender) {
+		localCommon.beforeBlock(multisigAccount, dapp, function (lib, sender) {
 			library = lib;
 			multisigSender = sender;
 		});
