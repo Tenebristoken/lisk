@@ -61,7 +61,7 @@
         }
     },
     "broadcasts": {
-        "broadcastInterval": 5000,
+        "broadcastInterval": 4000,
         "broadcastLimit": 20,
         "parallelLimit": 20,
         "releaseLimit": 25,
