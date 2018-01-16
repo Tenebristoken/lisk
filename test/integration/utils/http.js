@@ -121,6 +121,7 @@ module.exports = {
 			return JSON.parse(res.body).data[0];
 		}).catch(function (err) {
 			throw new Error('Failed to enable forging for delegate with publicKey: ' + keys.publicKey + JSON.stringify(err));
-		});
+		}
+	     );
 	}
 };
